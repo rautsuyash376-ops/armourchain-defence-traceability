@@ -6,7 +6,13 @@ async function bootstrap() {
     instrument: ObserveInstrument,
   });
 
-  app.enableCors({ origin: 'http://localhost:5173' });
+  const allowedOrigins = ['http://localhost:5173'];
+
+  if (process.env.FRONTEND_URL) {
+    allowedOrigins.push(process.env.FRONTEND_URL);
+  }
+
+  app.enableCors({ origin: allowedOrigins });
 
   await app.listen(process.env.PORT ?? 3000);
 }
