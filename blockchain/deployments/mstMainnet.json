@@ -1,0 +1,13 @@
+{
+  "status": "NOT_DEPLOYED",
+  "network": "mstMainnet",
+  "chainId": 4646,
+  "contractName": "DefenceEquipmentTraceability",
+  "contractAddress": null,
+  "deploymentTransactionHash": null,
+  "blockNumber": null,
+  "deployer": null,
+  "deployedAt": null,
+  "verificationStatus": "NOT_ATTEMPTED",
+  "notes": "No deployment was performed. Mainnet RPC, deployer authorization, funding, and production approval remain prerequisites."
+}

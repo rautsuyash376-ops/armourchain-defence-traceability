@@ -1,0 +1,24 @@
+{
+  "name": "defence-equipment-traceability",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Proposed smart-contract interface for defence equipment and spare-parts traceability on MST.",
+  "license": "MIT",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "export:abi": "hardhat compile && node scripts/export-abi.cjs",
+    "deploy:testnet": "hardhat run scripts/deploy.cjs --network mstTestnet",
+    "verify:testnet": "hardhat run scripts/verify.cjs --network mstTestnet",
+    "deploy:mainnet": "hardhat run scripts/deploy.cjs --network mstMainnet",
+    "verify:mainnet": "hardhat run scripts/verify.cjs --network mstMainnet",
+    "lint:solidity": "solhint 'contracts/**/*.sol'"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "5.0.0",
+    "@openzeppelin/contracts": "5.0.2",
+    "dotenv": "16.4.5",
+    "hardhat": "2.28.0",
+    "solhint": "5.0.5"
+  }
+}

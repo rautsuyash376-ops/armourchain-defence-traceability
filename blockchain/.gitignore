@@ -1,0 +1,17 @@
+node_modules/
+artifacts/
+cache/
+coverage/
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+*.key
+*.pem
+*.keystore
+*.mnemonic
+**/wallet*.json
+secrets/
+wallets/
+keystore/
