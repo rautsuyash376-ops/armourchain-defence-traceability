@@ -27,6 +27,13 @@ type CreateAssetRequest = {
 @Controller()
 export class AppController {
   constructor(private readonly supabase: SupabaseService) {}
+    private ensureWritesAllowed() {
+    if (process.env.DEMO_READ_ONLY === 'true') {
+      throw new ServiceUnavailableException(
+        'This public demo is read-only.',
+      );
+    }
+  }
 
   @Get('api/health/db')
   async checkDatabase() {
@@ -276,6 +283,7 @@ export class AppController {
 
   @Post('api/assets')
   async createAssetDraft(@Body() body: CreateAssetRequest) {
+    this.ensureWritesAllowed();
     if (
       typeof body.assetCode !== 'string' ||
       typeof body.equipmentType !== 'string' ||
@@ -372,6 +380,7 @@ export class AppController {
     @Param('approvalCode') approvalCode: string,
     @Body() body: { status: string },
   ) {
+    this.ensureWritesAllowed();
     if (body.status !== 'Approved' && body.status !== 'Rejected') {
       throw new ConflictException('Status must be Approved or Rejected.');
     }
