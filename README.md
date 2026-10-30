@@ -1,3 +1,10 @@
+## Live Demo
+
+https://armourchain-defence-traceability-1.onrender.com
+
+## Demo Note
+
+This prototype runs on MST Testnet. On-chain asset registration is limited to wallets granted the Supplier role. Judges can inspect the sample asset and verify its transaction on MSTScan; a new registration can be demonstrated using the authorized demo wallet. Never share wallet recovery phrases or private keys.
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
